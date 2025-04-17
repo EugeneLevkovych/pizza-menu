@@ -3,9 +3,9 @@ import { pizzaData } from './Pizza'
 export default function Menu() {
     return <main className="menu">
          <h2>Our menu</h2> 
-          <div>
+          <ul className='pizzas'>
             {pizzaData.map((pizza) => (<Pizza pizzaObj={pizza} key={pizza.name}/>))}
-          </div>
+          </ul>
 
          {/* <Pizza
           name="Pizza Spinaci"
