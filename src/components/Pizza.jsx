@@ -4,7 +4,7 @@ export const pizzaData = [
       name: "Focaccia",
       ingredients: "Bread with italian olive oil and rosemary",
       price: 6,
-      photoName: "public/focaccia.jpg",
+      photoName: "./public/focaccia.jpg",
       soldOut: false,
     },
     {
@@ -52,7 +52,7 @@ export default function Pizza(props) {
         <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
         <div>
         <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredient}</p>
+        <p>{props.pizzaObj.ingredients}</p>
         <span>{props.pizzaObj.price}</span> 
         </div>
       </li>
