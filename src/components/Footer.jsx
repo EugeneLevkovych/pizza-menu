@@ -1,6 +1,6 @@
 export default function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 11;
   const closeHour = 23;
   const isOpen = hour >= openHour && hour <= closeHour;
   // console.log(isOpen);
