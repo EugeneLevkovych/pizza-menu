@@ -2,27 +2,24 @@ import Pizza from "./Pizza";
 import { pizzaData } from "./Pizza";
 
 export default function Menu() {
+  const pizzas = pizzaData;
+  // const pizzas = [];
+  const numPizzas = pizzas.length;
+
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-      </ul>
 
-      {/* <Pizza
-        name="Pizza Spinaci"
-        ingredient="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="/img/spinaci.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredient="Tomato, mushrooms"
-        photoName="/img/funghi.jpg"
-        price={11}
-      /> */}
+      {numPizzas > 0 ? (
+        <ul className="pizzas">
+          {pizzas.map((pizz) => (
+            // <Pizza name={pizz.name} photoName={pizz.photoName} key={pizz.name} />
+            <Pizza pizzaObj={pizz} key={pizz.name} />
+          ))}
+        </ul>
+      ) : (
+        <p>We're still working on our menu. Please come back later.</p>
+      )}
     </main>
   );
 }

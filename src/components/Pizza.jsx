@@ -3,7 +3,7 @@ export const pizzaData = [
     name: "Focaccia",
     ingredients: "Bread with italian olive oil and rosemary",
     price: 6,
-    photoName: ".//focaccia.jpg",
+    photoName: "./focaccia.jpg",
     soldOut: false,
   },
   {
@@ -17,34 +17,37 @@ export const pizzaData = [
     name: "Pizza Spinaci",
     ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
     price: 12,
-    photoName: "/spinaci.jpg",
+    photoName: "./spinaci.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Funghi",
     ingredients: "Tomato, mozarella, mushrooms, and onion",
     price: 12,
-    photoName: "/funghi.jpg",
+    photoName: "./funghi.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Salamino",
     ingredients: "Tomato, mozarella, and pepperoni",
     price: 15,
-    photoName: "/salamino.jpg",
+    photoName: "./salamino.jpg",
     soldOut: true,
   },
   {
     name: "Pizza Prosciutto",
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
     price: 18,
-    photoName: "/prosciutto.jpg",
+    photoName: "./prosciutto.jpg",
     soldOut: false,
   },
 ];
 
 export default function Pizza(props) {
-  // console.log(props)
+  //console.log(props);
+
+  if (props.pizzaObj.soldOut) return null;
+
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
